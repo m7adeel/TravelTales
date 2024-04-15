@@ -3,11 +3,9 @@ package com.example.traveltales
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class MainActivity : AppCompatActivity() {
+class OTP : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        // Splash Screen
+        setContentView(R.layout.activity_otp)
     }
 }
