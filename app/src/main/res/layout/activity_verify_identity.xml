@@ -1,9 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VerifyIdentity">
+    android:background="#FFF"
+    android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Back Arrow at the top -->
+    <ImageView
+        android:id="@+id/backArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back_arrow" />
+
+    <!-- Title and Description -->
+    <TextView
+        android:id="@+id/verifyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/backArrow"
+        android:layout_marginTop="32dp"
+        android:text="Verify your identity"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/verifyDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/verifyTitle"
+        android:text="Please select your contact details and we will send a verification code to verify your identity"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <!-- Verification Options -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/verifyDescription"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical">
+
+        <!-- Email Verification -->
+        <Button
+            android:id="@+id/emailVerifyButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Verify using Email"
+            android:drawableStart="@drawable/ic_email"
+            android:background="@drawable/button_background" />
+
+        <!-- Phone Number Verification -->
+        <Button
+            android:id="@+id/phoneVerifyButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Verify using Phone Number"
+            android:drawableStart="@drawable/ic_phone"
+            android:background="@drawable/button_background" />
+    </LinearLayout>
+
+    <!-- Floating Action Button for Proceed -->
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/nextFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_next" />
+    </FrameLayout>
+
+</RelativeLayout>

@@ -1,9 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileSetting">
+    android:background="#FFF"
+    android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Skip Text at the top right -->
+    <TextView
+        android:id="@+id/skipText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="Skip"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#FF5722" />
+
+    <!-- Back Arrow at the top left -->
+    <ImageView
+        android:id="@+id/backArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back_arrow"
+        android:layout_alignParentStart="true"/>
+
+    <!-- Title and Description -->
+    <TextView
+        android:id="@+id/setupTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/backArrow"
+        android:layout_marginTop="32dp"
+        android:text="Setup your Account"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/setupDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/setupTitle"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <!-- Profile Picture Placeholder -->
+    <FrameLayout
+        android:id="@+id/profileImagePlaceholder"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/setupDescription"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/profile_picture_background">
+
+        <!-- User's Profile Image Here -->
+        <!-- Placeholder for now -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_user_placeholder" />
+
+        <!-- Small Camera Icon -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:src="@drawable/ic_camera" />
+    </FrameLayout>
+
+    <!-- Error text for image size -->
+    <TextView
+        android:id="@+id/imageErrorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileImagePlaceholder"
+        android:layout_centerHorizontal="true"
+        android:text="Your image too small"
+        android:textColor="#FF5722"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <!-- Username Input Field -->
+    <EditText
+        android:id="@+id/usernameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:layout_below="@id/imageErrorText"
+        android:inputType="text"
+        android:text="samuel_a12"
+        android:drawableEnd="@drawable/ic_error" />
+
+    <!-- Error text for username -->
+    <TextView
+        android:id="@+id/usernameErrorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usernameEditText"
+        android:text="Username already taken"
+        android:textColor="#FF5722"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <!-- Floating Action Button for Proceed -->
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/nextFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_next" />
+    </FrameLayout>
+
+</RelativeLayout>
